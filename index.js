@@ -25,7 +25,7 @@ bot.on("message", async message => {
     message.channel.send("```Checkpoint 1: Successfully added #bugs-glitches channel```")
     message.channel.send("**ALL SYSTEMS OPERATIONAL!**")
   }
-  if (message.content === 'p.report') {
+  if (message.content.startsWith('p.report')) {
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
     if(!repchannel) return message.channel.send("Bot is improperly set up! Please type `p.test`.");
     const sayMessage = args.join(" ");
