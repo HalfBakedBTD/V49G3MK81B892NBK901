@@ -32,11 +32,8 @@ bot.on("message", async message => {
     message.delete().catch(O_o=>{}); 
     repchannel.send(`**REPORT:**\n\n\tUser: <@${message.author.id}>\n\n\tBug: ${sayMessage}`)
   }
-  if (message.content.startsWith('p.party')) {
+  if (message.content.startsWith('p.party ')) {
     const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
     message.channel.send(`:tada: Party 'cause ${sayMessage}.`);
   }
 });
