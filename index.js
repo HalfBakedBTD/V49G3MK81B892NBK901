@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
