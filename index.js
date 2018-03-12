@@ -43,6 +43,12 @@ bot.on("message", async message => {
     message.channel.send("DMed you! Check it out!")
     return message.author.send(""); 
   }
+  if (message.content === 'p.8ball') {
+    message.channel.send("Please provide arguments. You can type `p.help 8ball` for more info!")
+  }
+  if (message.content === 'p.party') {
+    message.channel.send("Please provide arguments. You can type `p.help party` for more info!")
+  }
   if (message.content === 'p.test') {
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
     if(!repchannel) return message.channel.send("I can't find **#bugs-glitches**! Please create one then type `p.test`.");
