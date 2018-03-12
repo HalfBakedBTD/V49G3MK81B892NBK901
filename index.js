@@ -20,8 +20,28 @@ bot.on("message", async message => {
     message.channel.send(`\`\`\`PartyPong! I am online!\`\`\``)
   }
   if (message.content === 'p.help') {
-    message.channel.send("DMed you! Check it out for all the info!")
+    message.channel.send("DMed you! Check it out!")
     return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\n\n**Type `p.help <command>` to get more command info and how to use."); 
+  }
+  if (message.content === 'p.help report') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__REPORT COMMAND__**:\n\tInfo: Use this command to report glitches in BTDX.\n\tUse: `p.report <arguments>`\n\tExample: `p.report I can put the sub on land!`"); 
+  }
+  if (message.content === 'p.help test') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__TEST COMMAND__**:\n\tInfo: helps set up all channels needed on the server.\n\tUse: `p.test`\n\tExample: `p.test`"); 
+  }
+  if (message.content === 'p.help party') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__PARTY COMMAND__**:\n\tInfo: add in the test of why the bot should party.\n\tUse: `p.party <arguments>`\n\tExample: `p.party I get free dinner`"); 
+  }
+  if (message.content === 'p.help 8ball') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__8BALL COMMAND__**:\n\tInfo: Replies to a question.\n\tUse: `p.8ball <argument in question form>`\n\tExample: `p.8ball Am I the fairest of them all?`"); 
+  }
+  if (message.content === 'p.help ') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send(""); 
   }
   if (message.content === 'p.test') {
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
