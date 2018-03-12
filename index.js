@@ -131,7 +131,7 @@ bot.on("message", async message => {
     
     await member.kick(reason)
       .catch(error => message.reply(`Sorry, I couldn't kick because of : ${error}`));
-    message.reply(`${member.user.username} has been kicked by ${message.author.username} because: ***${reason}***`);
+    message.channel.send(`<@${member.user.id}> has been kicked by <@${message.author.id}> because: ***${reason}***`);
   }
 });
 
