@@ -19,6 +19,12 @@ bot.on("message", async message => {
   if (message.content === 'p.ping') {
     message.channel.send(`\`\`\`PartyPong! I am online!\`\`\``)
   }
+  if (message.content === 'p.test') {
+    let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
+    if(!repchannel) return message.channel.send("I can't find **#bugs-glitches**! Please create one then type `p.test`.");
+    message.channel.send("```Checkpoint 1: Successfully added #bugs-glitches channel```")
+    message.channel.send("**ALL SYSTEMS OPERATIONAL!**")
+  }
 });
 
 //Ik5KSLzA6C
