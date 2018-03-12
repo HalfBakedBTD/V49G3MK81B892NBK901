@@ -71,7 +71,7 @@ bot.on("message", async message => {
     message.channel.send("**ALL SYSTEMS OPERATIONAL!**")
   }
   if (message.content.startsWith('p.report')) {
-    if (chratis_talked_users.has(message.author.id)) return message.reply("You have to wait before using this command again.\n*[Can be used once every 30 minutes]*");
+    if (chratis_talked_users.has(message.author.id)) return message.reply("You have to wait before using this command again.\n*[Can be used once every 15 minutes]*");
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
     if(!repchannel) return message.channel.send("Bot is improperly set up! Please type `p.test`.");
     const sayMessage = args.join(" ");
