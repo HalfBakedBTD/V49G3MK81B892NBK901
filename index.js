@@ -43,15 +43,7 @@ bot.on("message", async message => {
     let result = Math.floor((Math.random() * replies.length));
     let question = args.join(" ");
 
-    let ballembed = new Discord.RichEmbed()
-
-    .setAuthor(message.author.username)
-    .setColor("#00ff00")
-    .addField("Question", question)
-    .addField("Answer", replies[result]);
-
-    message.channel.send(ballembed)
-
+    message.channel.send(`**<@${message.author.id}>:**\nQuestion:\n${question}\n\nAnswer:\n${replies[result]}`);
     message.delete();
   }
 });
