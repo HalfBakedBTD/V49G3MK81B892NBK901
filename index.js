@@ -36,6 +36,24 @@ bot.on("message", async message => {
     const sayMessage = args.join(" ");
     message.channel.send(`:tada: Party 'cause ${sayMessage}.`);
   }
+  if (message.content.startsWith('p.8ball ')) {
+    if(!args[1]) return message.reply("Plesae enter a full question with 2 or more words!");
+    let replies = ["Yes", "No", "I don't know", "Ask again later!", "Nope", "I am not sure!", "Pls No", "You tell me", "IDK, SORRY.", "I ASKED GEORGE WASHINGTON FROM THE DEAD! HE SAID YES!"];
+
+    let result = Math.floor((Math.random() * replies.length));
+    let question = args.join(" ");
+
+    let ballembed = new Discord.RichEmbed()
+
+    .setAuthor(message.author.username)
+    .setColor("#00ff00")
+    .addField("Question", question)
+    .addField("Answer", replies[result]);
+
+    message.channel.send(ballembed)
+
+    message.delete();
+  }
 });
 
 //Ik5KSLzA6C
