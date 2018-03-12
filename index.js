@@ -93,11 +93,11 @@ bot.on("message", async message => {
     return message.channel.send(`<@${message.author.id}>, I have chose ${maps[choice]}!`)
   }
   if (message.content.startsWith('p.say '))
-    const sayMessage = args.join(" ");
+    const sendMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
-    message.channel.send(sayMessage);
+    message.channel.send(sendMessage);
   }
 });
 
