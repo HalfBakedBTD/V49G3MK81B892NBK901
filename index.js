@@ -25,19 +25,23 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**__REPORT COMMAND__**:\n\tInfo: Use this command to report glitches in BTDX.\n\tUse: `p.report <arguments>`\n\tExample: `p.report I can put the sub on land!`"); 
+    return message.author.send("**__REPORT COMMAND__**:\n\n\tInfo: Use this command to report glitches in BTDX.\n\n\tUse: `p.report <arguments>`\n\n\tExample: `p.report I can put the sub on land!`"); 
   }
   if (message.content === 'p.help test') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**__TEST COMMAND__**:\n\tInfo: helps set up all channels needed on the server.\n\tUse: `p.test`\n\tExample: `p.test`"); 
+    return message.author.send("**__TEST COMMAND__**:\n\n\tInfo: helps set up all channels needed on the server.\n\n\tUse: `p.test`\n\n\tExample: `p.test`"); 
   }
   if (message.content === 'p.help party') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**__PARTY COMMAND__**:\n\tInfo: add in the test of why the bot should party.\n\tUse: `p.party <arguments>`\n\tExample: `p.party I get free dinner`"); 
+    return message.author.send("**__PARTY COMMAND__**:\n\n\tInfo: add in the reason of why I should party.\n\n\tUse: `p.party <arguments>`\n\n\tExample: `p.party I get free dinner`"); 
   }
   if (message.content === 'p.help 8ball') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**__8BALL COMMAND__**:\n\tInfo: Replies to a question.\n\tUse: `p.8ball <argument in question form>`\n\tExample: `p.8ball Am I the fairest of them all?`"); 
+    return message.author.send("**__8BALL COMMAND__**:\n\n\tInfo: Replies to a question.\n\n\tUse: `p.8ball <argument in question form>`\n\n\tExample: `p.8ball Am I the fairest of them all?`"); 
+  }
+  if (message.content === 'p.help map') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__MAP COMMAND__**:\n\n\tInfo: generates a random BTDX map.\n\n\tUse: `p.map`\n\n\tExample: `p.map`"); 
   }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
