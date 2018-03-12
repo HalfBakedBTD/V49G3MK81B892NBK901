@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\n\t`say` make the bot say something!\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -43,6 +43,10 @@ bot.on("message", async message => {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__MAP COMMAND__**:\n\n\tInfo: generates a random BTDX map.\n\n\tUse: `p.map`\n\n\tExample: `p.map`"); 
   }
+  if (message.content === 'p.help say') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__SAY COMMAND__**\n\n\tInfo: make the bot say something!\n\n\tUse: `p.say <arguments>`\n\n\tExample: `p.say I own you!`"); 
+  }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send(""); 
@@ -52,6 +56,9 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.party') {
     message.channel.send("Please provide arguments. You can type `p.help party` for more info!")
+  }
+  if (message.content === 'p.say') {
+    message.channel.send("Please provide arguments. You can type `p.help say` for more info!")
   }
   if (message.content === 'p.test') {
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
@@ -84,6 +91,13 @@ bot.on("message", async message => {
     let maps = ["Monkey Meadows", "Bloon Oasis", "Shade Woods", "Bloon Oasis", "Portal Lab", "Swamp Spirals", "Minecarts", "Monkey Fort", "Crimson Creek", "Conveyor Belts", "Monkey Town Docks", "Conveyor Belts", "Space Portals", "The Depths", "Sun Dial", "Xtreme Park", "Prison Break"]
     let choice = Math.floor((Math.random() * maps.length));
     return message.channel.send(`<@${message.author.id}>, I have chose ${maps[choice]}!`)
+  }
+  if (message.content.startsWith('p.say '))
+    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
   }
 });
 
