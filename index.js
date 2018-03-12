@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
-const chratis_cooldown_time = 28;
+const chratis_cooldown_time = 15;
 const chratis_talked_users = new Set();
 const button_cooldown_time = 60;
 const button_talked_users = new Set();
@@ -71,11 +71,16 @@ bot.on("message", async message => {
     message.channel.send("**ALL SYSTEMS OPERATIONAL!**")
   }
   if (message.content.startsWith('p.report')) {
+    if (chratis_talked_users.has(message.author.id)) return message.reply("You have to wait before using this command again.\n*[Can be used once every 30 minutes]*");
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
     if(!repchannel) return message.channel.send("Bot is improperly set up! Please type `p.test`.");
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     repchannel.send(`**REPORT:**\n\n\tUser: <@${message.author.id}>\n\n\tBug: ${sayMessage}`)
+    chratis_talked_users.add(message.author.id);
+    setTimeout(() => {
+      chratis_talked_users.delete(message.author.id);
+    }, chratis_cooldown_time * 60000);
   }
   if (message.content.startsWith('p.party ')) {
     const sayMessage = args.join(" ");
