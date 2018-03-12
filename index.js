@@ -30,7 +30,7 @@ bot.on("message", async message => {
     if(!repchannel) return message.channel.send("Bot is improperly set up! Please type `p.test`.");
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
-    repchannel.send(`**REPORT:**\`\`\`User: <@${message.author.id}>\n\nBug: ${sayMessage}\`\`\``)
+    repchannel.send(`**REPORT:**\n\n\tUser: <@${message.author.id}>\n\n\tBug: ${sayMessage}`)
   }
 });
 
