@@ -73,7 +73,7 @@ bot.on("message", async message => {
   if (message.content === 'p.map') {
     let maps = ["Monkey Meadows", "Bloon Oasis", "Shade Woods", "Bloon Oasis", "Portal Lab", "Swamp Spirals", "Minecarts", "Monkey Fort", "Crimson Creek", "Conveyor Belts", "Monkey Town Docks", "Conveyor Belts", "Space Portals", "The Depths", "Sun Dial", "Xtreme Park", "Prison Break"]
     let choice = Math.floor((Math.random() * maps.length));
-    return message.channel.send(`<@${message.author.id}>, I have chose ${choice}!`)
+    return message.channel.send(`<@${message.author.id}>, I have chose ${maps[choice]}!`)
   }
 });
 
