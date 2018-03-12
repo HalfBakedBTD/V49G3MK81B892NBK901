@@ -43,7 +43,7 @@ bot.on("message", async message => {
     let result = Math.floor((Math.random() * replies.length));
     let question = args.join(" ");
 
-    message.channel.send(`**${message.author.username}**:\n**Question:**\n\t${question}\n\n**Answer:**\n\t${replies[result]}`);
+    message.channel.send(`**__${message.author.username}__**:\n\t**Question:**\n\t\t${question}\n\n\t**Answer:**\n\t\t${replies[result]}`);
     message.delete();
   }
 });
