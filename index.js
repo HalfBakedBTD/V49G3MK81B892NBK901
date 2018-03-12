@@ -19,6 +19,10 @@ bot.on("message", async message => {
   if (message.content === 'p.ping') {
     message.channel.send(`\`\`\`PartyPong! I am online!\`\`\``)
   }
+  if (message.content === 'p.help') {
+    message.channel.send("DMed you! Check it out for all the info!")
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\n\n**Type `p.help <command>` to get more command info and how to use."); 
+  }
   if (message.content === 'p.test') {
     let repchannel = message.guild.channels.find(`name`, "bugs-glitches");
     if(!repchannel) return message.channel.send("I can't find **#bugs-glitches**! Please create one then type `p.test`.");
@@ -34,7 +38,7 @@ bot.on("message", async message => {
   }
   if (message.content.startsWith('p.party ')) {
     const sayMessage = args.join(" ");
-    message.channel.send(`:tada: Party 'cause ${sayMessage}.`);
+    message.channel.send(`:tada: Party 'cause ${sayMessage}!`);
   }
   if (message.content.startsWith('p.8ball ')) {
     if(!args[1]) return message.reply("Plesae enter a full question with 2 or more words!");
