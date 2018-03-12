@@ -47,6 +47,10 @@ bot.on("message", async message => {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__SAY COMMAND__**\n\n\tInfo: make the bot say something!\n\n\tUse: `p.say <arguments>`\n\n\tExample: `p.say I own you!`"); 
   }
+  if (message.content === 'p.help find') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__FIND COMMAND__**\n\n\tInfo: make the bot find users!\n\n\tUse: `p.find <arguments>`\n\n\tExample: `p.find bob`"); 
+  }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send(""); 
