@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Fun:**\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -92,9 +92,19 @@ bot.on("message", async message => {
     let choice = Math.floor((Math.random() * maps.length));
     return message.channel.send(`<@${message.author.id}>, I have chose ${maps[choice]}!`)
   }
-  if (message.content.startsWith('p.say ')) {
+  if (message.content.startsWith('p.say')) {
     const sendMessage = args.join(" "); 
     message.channel.send(`\`\`\`${sendMessage}\`\`\``);
+  }
+  if (message.content.startsWith('p.find ')) {
+    let users = bot.users;
+
+    let searchTerm = args[0];
+    if(!searchTerm) return message.channel.send("Please provide arguments! You can type `p.find` for more info.");
+
+    let matches = users.filter(u => u.tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    message.channel.send("I found:")
+    message.channel.send(matches.map(u => u.tag));
   }
 });
 
