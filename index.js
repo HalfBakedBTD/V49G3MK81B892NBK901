@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -62,6 +62,22 @@ bot.on("message", async message => {
   if (message.content === 'p.help map') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__MAP COMMAND__**:\n\n\tInfo: measures buffness and gives feedback.\n\n\tUse: `p.buff`\n\n\tExample: `p.buff`"); 
+  }
+  if (message.content === 'p.help buff') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__BUFF COMMAND__**\n\n\tInfo: Rates your buffness.\n\n\tUse: `p.buff`\n\n\tExample: `p.buff`"); 
+  }
+  if (message.content === 'p.help die') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__DIE COMMAND__**\n\n\tInfo: Rolls a die.\n\n\tUse: `p.die`\n\n\tExample: `p.die`"); 
+  }
+  if (message.content === 'p.help 2die') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__DIE COMMAND__**\n\n\tInfo: Rolls two dice.\n\n\tUse: `p.2die`\n\n\tExample: `p.2die`"); 
+  }
+  if (message.content === 'p.help 100die') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__DIE COMMAND__**\n\n\tInfo: Rolls a 100 sided die.\n\n\tUse: `p.100die`\n\n\tExample: `p.100die`"); 
   }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
@@ -181,6 +197,21 @@ bot.on("message", async message => {
     setTimeout(() => {
       button_talked_users.delete(message.author.id);
     }, button_cooldown_time * 1000);
+  }
+  if (message.content === 'p.die') {
+    let random = Math.random() * 5 + 1;
+    var number = Math.round(random)
+    message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
+  }
+  if (message.content === 'p.2die') {
+    let random = Math.random() * 11 + 1;
+    var number = Math.round(random)
+    message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
+  }
+  if (message.content === 'p.100die') {
+    let random = Math.random() * 99 + 1;
+    var number = Math.round(random)
+    message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
   }
 });
 
