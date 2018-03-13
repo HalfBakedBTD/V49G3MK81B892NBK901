@@ -148,9 +148,8 @@ bot.on("message", async message => {
     
     await member.ban(reason)
       .catch(error => message.reply(`Sorry, I couldn't ban because of : ${error}`));
-    message.reply(`${member.user.username} has been banned by ${message.author.username} because: **__${reason}__**`);
-    
-    message.channel.send('<@${message.author.id}> banned <@${member.user.id}> because ${reason}')
+    message.channel.send(`${member.user.username} has been banned by ${message.author.username} because: **__${reason}__**`);
+  
     //let Banembed = new Discord.RichEmbed()
     //.setColor("#00ff00")
     //.setTimestamp()
