@@ -277,7 +277,7 @@ bot.on("message", async message => {
   if (message.content === 'p.credits') {
     return message.channel.send(`**Credit for making this bot goes to HalfBakedGaming.**\n\tSub to him: https://www.youtube.com/c/HalfBakedGaming15`)
   }
-  if (message.content.startWith('p.avatar')) {
+  if (message.content.startsWith('p.avatar')) {
     module.exports.run = async (bot, message, args) => {
       let msg = await message.channel.send("Generating avatar...");
       let target = message.mentions.users.first() || message.author;
