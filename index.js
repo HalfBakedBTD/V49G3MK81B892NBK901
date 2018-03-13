@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers` picks a random tower.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -79,6 +79,10 @@ bot.on("message", async message => {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__DIE COMMAND__**\n\n\tInfo: Rolls a 100 sided die.\n\n\tUse: `p.100die`\n\n\tExample: `p.100die`"); 
   }
+  if (message.content === 'p.help towers') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__TOWERS COMMAND__**\n\n\tInfo: chooses a random tower.\n\n\tUse: `p.towers`\n\n\tExample: `p.towers`"); 
+  }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__ COMMAND__**\n\n\tInfo:\n\n\tUse:\n\n\tExample:"); 
@@ -128,6 +132,11 @@ bot.on("message", async message => {
     let maps = ["Monkey Meadows", "Bloon Oasis", "Shade Woods", "Bloon Oasis", "Portal Lab", "Swamp Spirals", "Minecarts", "Monkey Fort", "Crimson Creek", "Conveyor Belts", "Monkey Town Docks", "Conveyor Belts", "Space Portals", "The Depths", "Sun Dial", "Xtreme Park", "Prison Break"]
     let choice = Math.floor((Math.random() * maps.length));
     return message.channel.send(`<@${message.author.id}>, I have chose ${maps[choice]}!`)
+  }
+  if (message.content === 'p.towers') {
+    let towers = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice = Math.floor((Math.random() * towers.length));
+    return message.channel.send(`<@${message.author.id}>, I have chose ${towers[choice]}!`)
   }
   if (message.content.startsWith('p.say')) {
     const sendMessage = args.join(" "); 
