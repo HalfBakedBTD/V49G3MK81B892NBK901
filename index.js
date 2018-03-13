@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers` picks a random tower.\n\t`path` chooses a path from BTDX selections.\n\t`diff` chooses difficulty.\n\t`mode` chooses a random mode.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n**Links:**\n\t`btdx` gives newest BTDX download link.\n\t`ramaf` gives the link to ramaf's website.\n\t`youtube` links ramaf's YouTube.\n\t`credits` displays creator credits.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers` picks a random tower.\n\t`path` chooses a path from BTDX selections.\n\t`diff` chooses difficulty.\n\t`mode` chooses a random mode.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\t`avatar` generates a user's avatar.\n\n**Links:**\n\t`btdx` gives newest BTDX download link.\n\t`ramaf` gives the link to ramaf's website.\n\t`youtube` links ramaf's YouTube.\n\t`credits` displays creator credits.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -106,6 +106,10 @@ bot.on("message", async message => {
   if (message.content === 'p.help youtube') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__ COMMAND__**\n\n\tInfo: links Ramaf's YouTube.\n\n\tUse: `p.youtube`\n\n\tExample: `p.youtube`"); 
+  }
+  if (message.content === 'p.help avatar') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__AVATAR COMMAND__**\n\n\tInfo: generates a user's profile picture.\n\n\tUses:\n\t\t`p.avatar`\n\t\t`p.avatar <user>`\n\n\tExamples:\n\t\t`p.avatar`\n\t\t`p.avatar @UniBoy#2468`"); 
   }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
@@ -272,6 +276,17 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.credits') {
     return message.channel.send(`**Credit for making this bot goes to HalfBakedGaming.**\n\tSub to him: https://www.youtube.com/c/HalfBakedGaming15`)
+  }
+  if (message.content.startWith('p.avatar')) {
+    let msg = await message.channel.send("Generating avatar...");
+    let target = message.mentions.users.first() || message.author;
+
+    await message.channel.send({files: [
+        {
+        attachment: target.displayAvatarURL,
+        name: "avatar.png"
+        }
+    ]});
   }
 });
 
