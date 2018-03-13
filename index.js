@@ -278,15 +278,16 @@ bot.on("message", async message => {
     return message.channel.send(`**Credit for making this bot goes to HalfBakedGaming.**\n\tSub to him: https://www.youtube.com/c/HalfBakedGaming15`)
   }
   if (message.content.startWith('p.avatar')) {
-    let msg = await message.channel.send("Generating avatar...");
-    let target = message.mentions.users.first() || message.author;
+    module.exports.run = async (bot, message, args) => {
+      let msg = await message.channel.send("Generating avatar...");
+      let target = message.mentions.users.first() || message.author;
 
-    await message.channel.send({files: [
+      await message.channel.send({files: [
         {
         attachment: target.displayAvatarURL,
         name: "avatar.png"
         }
-    ]});
+      ]});
   }
 });
 
