@@ -288,6 +288,7 @@ bot.on("message", async message => {
         name: "avatar.png"
         }
       ]});
+    }
   }
 });
 
