@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers` picks a random tower.\n\t`path` chooses a path from BTDX selections.\n\t`diff` chooses difficulty.\n\t`mode` chooses a random mode.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers` picks a random tower.\n\t`path` chooses a path from BTDX selections.\n\t`diff` chooses difficulty.\n\t`mode` chooses a random mode.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n**Links:**\n\t`btdx` gives newest BTDX download link.\n\t`ramaf` gives the link to ramaf's website.\n\t`youtube` links ramaf's YouTube.\n\t`credits` displays creator credits.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -94,6 +94,18 @@ bot.on("message", async message => {
   if (message.content === 'p.help mode') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__MODE COMMAND__**\n\n\tInfo: chooses a random game mode.\n\n\tUse: `p.mode`\n\n\tExample: `p.mode`"); 
+  }
+  if (message.content === 'p.help btdx') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__MAP COMMAND__**:\n\n\tInfo: sends newest BTDX download.\n\n\tUse: `p.btdx`\n\n\tExample: `p.btdx`"); 
+  }
+  if (message.content === 'p.help ramaf') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__MAP COMMAND__**:\n\n\tInfo: gives ramaf's website link.\n\n\tUse: `p.ramaf`\n\n\tExample: `p.ramaf`"); 
+  }
+  if (message.content === 'p.help youtube') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__ COMMAND__**\n\n\tInfo: links Ramaf's YouTube.\n\n\tUse: `p.youtube`\n\n\tExample: `p.youtube`"); 
   }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
@@ -248,6 +260,18 @@ bot.on("message", async message => {
     let random = Math.random() * 99 + 1;
     var number = Math.round(random)
     message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
+  }
+  if (message.content === 'p.btdx') {
+    return message.channel.send(`Newest BTDX Download: :link: http://www.ramafparty.com/2018/02/bloons-tdx-125-out-now.html :link:`)
+  }
+  if (message.content === 'p.ramaf') {
+    return message.channel.send(`Ramaf's Website: :link: https://www.ramafparty.com/ :link:`)
+  }
+  if (message.content === 'p.youtube') {
+    return message.channel.send(`Ramaf's YouTube: :link: https://www.youtube.com/user/ramafable :link:`)
+  }
+  if (message.content === 'p.credits') {
+    return message.channel.send(`**Credit for making this bot goes to HalfBakedGaming.**\n\tSub to him: https://www.youtube.com/c/HalfBakedGaming15`)
   }
 });
 
