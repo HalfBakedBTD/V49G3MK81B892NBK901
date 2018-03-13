@@ -174,7 +174,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.buff') {
     if (chratis_talked_users.has(message.author.id)) return message.reply("You have to wait before using this command again.\n*[Can be used once every 30s]*");
-    let buffness = ["Jelly Muscles.", "Cooked Jelly Muscles.", "Cotton Muscles.", "You're Fat.", "Glistening Muscles.", "Dead Muscles.", "Vain Popping Muscles.", "Internet Nerd Muscles", "Buff Dude Muscles.", "Serfer's Abs.", "Deamon's Muscles.", "Rock Hard Muscles.", "Six Pack... Of Pudding Cups.", "Snap a Pencil with Your Teath Strong.", "You feel like... A Pillow!", "Protien Shake Strong.", "A Discord Homie Strong."]
+    let buffness = ["Jelly Muscles", "Cooked Jelly Muscles", "Cotton Muscles", "You're Fat", "Glistening Muscles", "Dead Muscles", "Vain Popping Muscles", "Internet Nerd Muscles", "Buff Dude Muscles", "Serfer's Abs", "Deamon's Muscles", "Rock Hard Muscles", "Six Pack... Of Pudding Cups", "Snap a Pencil with Your Teath Strong", "You feel like... A Pillow", "Protien Shake Strong", "A Discord Homie Strong"]
     let choice = Math.floor((Math.random() * buffness.length));
     return message.channel.send(`<@${message.author.id}>, I have rated you to have: ${buffness[choice]}!`)
     button_talked_users.add(message.author.id);
