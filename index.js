@@ -3,7 +3,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const chratis_cooldown_time = 15;
 const chratis_talked_users = new Set();
-const button_cooldown_time = 60;
+const button_cooldown_time = 30;
 const button_talked_users = new Set();
 
 bot.on("ready", async () => {
@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -58,6 +58,10 @@ bot.on("message", async message => {
   if (message.content === 'p.help ban') {
     message.channel.send("DMed you! Check it out!")
     return message.author.send("**__BAN COMMAND__**\n\n\tInfo: Bans annoying users on command.\n\n\tUse: `p.ban <user> <reason>`\n\n\tExample: `p.ban @Freddy#9999 NSFW posting`"); 
+  }
+  if (message.content === 'p.help map') {
+    message.channel.send("DMed you! Check it out!")
+    return message.author.send("**__MAP COMMAND__**:\n\n\tInfo: measures buffness and gives feedback.\n\n\tUse: `p.buff`\n\n\tExample: `p.buff`"); 
   }
   if (message.content === 'p.help ') {
     message.channel.send("DMed you! Check it out!")
@@ -167,6 +171,16 @@ bot.on("message", async message => {
     //.addField('Reason', reason);
 
     //logs.send(Banembed);
+  }
+  if (message.content === 'p.buff') {
+    if (chratis_talked_users.has(message.author.id)) return message.reply("You have to wait before using this command again.\n*[Can be used once every 30s]*");
+    let buffness = ["Jelly Muscles.", "Cooked Jelly Muscles.", "Cotton Muscles.", "You're Fat.", "Glistening Muscles.", "Dead Muscles.", "Vain Popping Muscles.", "Internet Nerd Muscles", "Buff Dude Muscles.", "Serfer's Abs.", "Deamon's Muscles.", "Rock Hard Muscles.", "Six Pack... Of Pudding Cups.", "Snap a Pencil with Your Teath Strong.", "You feel like... A Pillow!", "Protien Shake Strong.", "A Discord Homie Strong."]
+    let choice = Math.floor((Math.random() * maps.length));
+    return message.channel.send(`<@${message.author.id}>, I have rated you to have: ${buffness[choice]}!`)
+    button_talked_users.add(message.author.id);
+    setTimeout(() => {
+      button_talked_users.delete(message.author.id);
+    }, button_cooldown_time * 1000);
   }
 });
 
