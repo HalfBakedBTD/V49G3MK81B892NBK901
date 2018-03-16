@@ -175,8 +175,8 @@ bot.on("message", async message => {
     let towers = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
     let choice = Math.floor((Math.random() * towers.length));
     let towers_one = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
-    let choice = Math.floor((Math.random() * towers_one.length));
-    return message.channel.send(`<@${message.author.id}>, I have chose ${towers[choice]}, and ${towers_one[choice]}!`)
+    let choice_one = Math.floor((Math.random() * towers_one.length));
+    return message.channel.send(`<@${message.author.id}>, I have chose ${towers[choice]}, and ${towers_one[choice_one]}!`)
   }
   if (message.content === 'p.path') {
     let path = ["< Right", "^ Middle", "Left >"]
