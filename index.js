@@ -21,7 +21,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers <number from 1-8>` picks a random tower.\n\t`path` chooses a path from BTDX selections.\n\t`diff` chooses difficulty.\n\t`mode` chooses a random mode.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n**Links:**\n\t`btdx` gives newest BTDX download link.\n\t`ramaf` gives the link to ramaf's website.\n\t`youtube` links ramaf's YouTube.\n\t`credits` displays creator credits.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
+    return message.author.send("**Mainframe:**\n\t`report` lets you report a glitch you find in BTDX.\n\t`test` tests if the bot is properly set up. *(admin only)*\n\n**Moderation:** *(Admin ONLY)*\n\t`kick` lets you kick someone.\n\t`ban` lets you rid filth of your server forever.\n\n**Fun:**\n\t`ping` the bot responds if online.\n\t`die` rolls a die.\n\t`2die` rolls 2 dice.\n\t`100die` rolles a 100 sided die.\n\t`buff` measures strength and gives feedback.\n\t`party` gives the bot a reason to party.\n\t`8ball` ask 8ball a question.\n\t`map` generates a random BTDX map.\n\t`towers` picks a random tower.\n\t`path` chooses a path from BTDX selections.\n\t`diff` chooses difficulty.\n\t`mode` chooses a random mode.\n\t`say` make the bot say something!\n\t`find` takes input to find a user.\n\n**Links:**\n\t`btdx` gives newest BTDX download link.\n\t`ramaf` gives the link to ramaf's website.\n\t`youtube` links ramaf's YouTube.\n\t`credits` displays creator credits.\n\n\n**Type `p.help <command>` to get more command info and how to use.**"); 
   }
   if (message.content === 'p.help report') {
     message.channel.send("DMed you! Check it out!")
@@ -81,7 +81,7 @@ bot.on("message", async message => {
   }
   if (message.content === 'p.help towers') {
     message.channel.send("DMed you! Check it out!")
-    return message.author.send("**__TOWERS COMMAND__**\n\n\tInfo: chooses a random tower.\n\n\tUse: `p.towers <number of towers from 1-8>`\n\n\tExample: `p.towers 2`"); 
+    return message.author.send("**__TOWERS COMMAND__**\n\n\tInfo: chooses a random tower.\n\n\tUse: `p.towers <number of towers from 1-4>`\n\n\tExample: `p.towers 2`"); 
   }
   if (message.content === 'p.help path') {
     message.channel.send("DMed you! Check it out!")
@@ -177,6 +177,26 @@ bot.on("message", async message => {
     let towers_one = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
     let choice_one = Math.floor((Math.random() * towers_one.length));
     return message.channel.send(`<@${message.author.id}>, I have chose ${towers[choice]}, and ${towers_one[choice_one]}!`)
+  }
+  if (message.content === 'p.towers 3') {
+    let towers = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice = Math.floor((Math.random() * towers.length));
+    let towers_one = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice_one = Math.floor((Math.random() * towers_one.length));
+    let towers_two = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice_two = Math.floor((Math.random() * towers_two.length));
+    return message.channel.send(`<@${message.author.id}>, I have chose ${towers[choice]}, ${towers_two[choice_two]}, and ${towers_one[choice_one]}!`)
+  }
+  if (message.content === 'p.towers 4') {
+    let towers = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice = Math.floor((Math.random() * towers.length));
+    let towers_one = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice_one = Math.floor((Math.random() * towers_one.length));
+    let towers_two = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice_two = Math.floor((Math.random() * towers_two.length));
+    let towers_three = ["Dart Monkey", "Tack Shooter", "Boomerang Thrower", "Sniper Monkey", "Ninja Monkey", "Bomb Shooter", "Monkey Sub", "Glue Gunner", "Ice Monkey", "Monkey Buccaneer", "Monkey Engineer", "Monkey Ace", "Monkey Apprentice", "Monkey Alchemist", "Banana Farm", "Monkey Village", "Dartling Gun", "Mortar Launcher", "Heli Pilot", "Spike Factory", "Plasma Monkey", "Super Monkey"]
+    let choice_three = Math.floor((Math.random() * towers_three.length));
+    return message.channel.send(`<@${message.author.id}>, I have chose ${towers[choice]}, ${towers_two[choice_two]}, ${towers_three[choice_three]}, and ${towers_one[choice_one]}!`)
   }
   if (message.content === 'p.path') {
     let path = ["< Right", "^ Middle", "Left >"]
